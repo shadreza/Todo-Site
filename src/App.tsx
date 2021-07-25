@@ -1,25 +1,59 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { createContext, useState } from 'react';
 import './App.css';
+import Header from './Components/Header/Header';
+
+// contexts
+export const UserNameContext1 = createContext('');
+export const UserNameContext2 = createContext({});
+export const UserLoggedInOrNotContext1 = createContext('');
+export const UserLoggedInOrNotContext2 = createContext({});
+export const UserImageContext1 = createContext('');
+export const UserImageContext2 = createContext({});
+
+// interface userInfo {
+//   name       : string;
+//   image      : string;
+//   email      : string;
+//   isLoggedIn : boolean;
+// }
+
+// type UserContextType = {
+//   user: userInfo;
+//   setUser: (props: userInfo) => void; 
+// };
+
+export const UserContext: object = createContext([])
 
 function App() {
+
+  // states
+  const [user, setUser] = useState({
+    name       : '',
+    email      : '',
+    image      : '',
+    isLoggedIn : false
+  })
+
+  const [userName, setUserName] = useState('')
+  const [userLoggedInOrNot, setUserLoggedInOrNot] = useState('')
+  const [userImage, setUserImage] = useState('')
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <UserContext.Provider value={[user, setUser]}>
+    <UserNameContext1.Provider value={userName}>
+    <UserNameContext2.Provider value={setUserName}>
+    <UserLoggedInOrNotContext1.Provider value={userLoggedInOrNot}>
+    <UserLoggedInOrNotContext2.Provider value={setUserLoggedInOrNot}>
+    <UserImageContext1.Provider value={userImage}>
+    <UserImageContext2.Provider value={setUserImage}>
+      <Header />
+    </UserImageContext2.Provider>
+    </UserImageContext1.Provider>
+    </UserLoggedInOrNotContext2.Provider>
+    </UserLoggedInOrNotContext1.Provider>
+    </UserNameContext2.Provider>
+    </UserNameContext1.Provider>
+    </UserContext.Provider>
   );
 }
 
