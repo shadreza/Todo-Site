@@ -1,3 +1,72 @@
 .header {
     display: flex;
+    justify-content: space-between;
+    background: #000;
+    width: 100%;
+    align-items: center;
+}
+
+.links {
+    color: aliceblue;
+    text-decoration: none;
+    margin: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 10px;
+    border-radius: 12px;
+}
+
+.left {
+    text-decoration: none;
+}
+
+.links:hover {
+    color: salmon;
+    background: aliceblue;
+}
+
+.left {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile-pic {
+    width: 56px;
+    border-radius: 100%;
+}
+
+.logo-image {
+    width: 60px;
+    cursor: pointer;
+}
+
+.title {
+    color: aliceblue;
+    cursor: pointer;
+}
+
+.profile {
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    margin-right: 10px;
+}
+
+.logout {
+    color: aliceblue;
+    font-weight: 600;
+    cursor: pointer;
+    margin-left: 10px;
+    border-radius: 12px;
+}
+
+.logout:hover {
+    color: orangered;
 }

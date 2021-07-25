@@ -37,14 +37,6 @@ const LoginPage = () => {
         })
     }
 
-    const googleLogout = () => {
-        firebase.auth().signOut().then(() => {
-            history.push('/')
-          }).catch((error) => {
-            console.log(error.msg)
-          });
-    }
-
     return (
         <div>
             <button onClick={()=>{googleLogin()}}>Sign in</button>
