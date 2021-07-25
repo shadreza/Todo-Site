@@ -1,0 +1,74 @@
+.hompage {
+    display: grid;
+    grid-template-columns: auto;
+    width: 100%;
+    text-align: center;
+    margin: 1rem auto;
+    justify-content: center;
+    align-self: center;
+}
+
+.complete-button {
+    width: 20px;
+}
+
+.remove-button {
+    width: 20px;
+}
+
+.complete-button:hover {
+    color: green;
+}
+
+.remove-button:hover {
+    color: orangered;
+}
+
+.add-button {
+    width: 24px;
+    margin-left: 6px;
+}
+
+.add-button:hover {
+    color: darksalmon;
+}
+
+.task {
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    background: gainsboro;
+    padding: 0 1rem;
+    border-radius: 12px;
+    margin: 4px auto;
+}
+
+.text {
+    font-size: 16px;
+    color: black;
+    font-weight: 550;
+}
+
+.TASKS {
+    margin: 2rem auto;
+}
+
+.input-field {
+    font-size: 16px;
+    font-weight: 500;
+    color: midnightblue;
+    background: #FAF3F3;
+    padding: 0 auto;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.input-form {
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+}
+
+.strong-text {
+    font-size: 18px;
+}

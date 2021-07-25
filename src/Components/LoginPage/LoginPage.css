@@ -1,0 +1,17 @@
+.login {
+    text-align: center;
+    padding-top: 4rem;
+}
+
+button {
+    padding: 8px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+button:hover {
+    background: coral;
+    color: aliceblue;
+}

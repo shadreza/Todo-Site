@@ -5,7 +5,9 @@ import "firebase/auth";
 import { useHistory } from 'react-router-dom';
 import { UserContext } from '../../App';
 import firebaseConfig from '../Firebase/firebase.config';
+import './LoginPage.css';
 firebase.initializeApp(firebaseConfig);
+
 
 const googleProvider = new firebase.auth.GoogleAuthProvider();
 
@@ -38,8 +40,13 @@ const LoginPage = () => {
     }
 
     return (
-        <div>
+        <div className="login">
+            <p><strong>Continue with Google Sign in</strong></p>
             <button onClick={()=>{googleLogin()}}>Sign in</button>
+            <br />
+            <br />
+            <p><small>Go Back</small></p>
+            <button onClick={()=>{history.push('/')}}>Back</button>
         </div>
     );
 };

@@ -6,8 +6,7 @@ import {
     BrowserRouter as Router,
     Route,
     Switch,
-    Link,
-    useHistory
+    Link
   } from "react-router-dom";
 import { UserContext } from '../../App';
 import LoginPage from '../LoginPage/LoginPage';
@@ -16,8 +15,6 @@ import Homepage from '../Homepage/Homepage';
 import firebase from "firebase/app";
 import "firebase/analytics";
 import "firebase/auth";
-
-const googleProvider = new firebase.auth.GoogleAuthProvider();
 
 const Header = () => {
 

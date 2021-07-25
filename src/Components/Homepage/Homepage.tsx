@@ -1,56 +1,83 @@
 import React, { useContext, useState } from 'react';
 import { UserContext } from '../../App';
+import './Homepage.css';
 
 const Homepage = () => {
 
     // context
     const USER = useContext(UserContext)
 
+    interface taskType {
+        text: string,
+        time: object
+    }
+
     // states
-    const [allTasks, setAllTasks] = useState <String[]> ([])
-    const [liveTasks, setLiveTasks] = useState <String[]> (['1,23,1','123'])
-    const [doneTasks, setDoneTasks] = useState <String[]> ([])
+    const [curentTask, setCurentTask] = useState <taskType> ()
+    const [liveTasks, setLiveTasks] = useState <taskType[]> ([])
+    const [doneTasks, setDoneTasks] = useState <taskType[]> ([])
 
     // functions
-
+    const getTheTime = () => {
+        const d = new Date();
+        return d;
+    }
 
     return (
         <div className="hompage">
             <div className="lists">
-                <div className="alive-tasks">
-                    <strong>Tasks remaining</strong>
+                <div className="alive-tasks TASKS">
+                    <strong className="strong-text">Tasks remaining {liveTasks.length>0 && `[${liveTasks.length}]`}</strong>
                     {
                         liveTasks.map(task =>
-                            <div className="task">
-                                <div className="text">
-                                    <p>{task}</p>
+                            <div className="Task">
+                                <div className="task">
+                                    <div className="text">
+                                        <p>{task.text}</p>
+                                    </div>
+                                    <p className="complete-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 complete-button" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fillRule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                        </svg>
+                                    </p>
                                 </div>
-                                <div className="complete-btn">
-                                
-                                </div>
+                                {
+                                    <p><small>{task.time}</small></p>
+                                }
                             </div>
                         )
                     }
                 </div>
-                <div className="done-tasks">
-                    <strong>Tasks completed</strong>
+                <div className="done-tasks TASKS">
+                    <strong className="strong-text">Tasks completed {doneTasks.length>0 && `[${doneTasks.length}]`}</strong>
                     {
                         doneTasks.map(task =>
-                            <div className="task">
-                                <div className="text">
-                                    <p>{task}</p>
+                            <div className="lists">
+                                <div className="task">
+                                    <div className="text">
+                                        <p>{task}</p>
+                                    </div>
+                                    <p className="remove-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 remove-button" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fillRule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clipRule="evenodd" />
+                                        </svg>
+                                    </p>
                                 </div>
-                                <div className="remove-btn">
-                                    
-                                </div>
+                                {
+                                    <p><small>{task.time}</small></p>
+                                }
                             </div>
                         )
                     }
                 </div>
             </div>
             <div className="input-form">
-                <input type="text" placeholder="add to your task stack"/>
-                <button>Add</button>
+                <input type="text" placeholder="add to your task stack" className="input-field" />
+                <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 add-button" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clipRule="evenodd" />
+                    </svg>
+                </p>
             </div>
         </div>
     );
