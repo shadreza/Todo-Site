@@ -9,7 +9,7 @@ function App() {
 
   // states
   const [user, setUser] = useState({
-    name       : 'asdasd',
+    name       : '',
     email      : '',
     image      : '',
     isLoggedIn : false

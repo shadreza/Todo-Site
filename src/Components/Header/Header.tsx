@@ -9,6 +9,7 @@ import {
     Link
   } from "react-router-dom";
 import { UserContext } from '../../App';
+import LoginPage from '../LoginPage/LoginPage';
 
 const Header = () => {
 
@@ -41,6 +42,9 @@ const Header = () => {
                     }
                 </div>
             </div>
+            <Switch>
+                <Route path="/login"><LoginPage /></Route>
+            </Switch>
         </Router>
     );
 };
