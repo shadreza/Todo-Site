@@ -1,46 +1,42 @@
-# Getting Started with Create React App
+# Todo Site by Shad Reza
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Live Site Link : https://shikkhok-app.web.app/
 
-## Available Scripts
+## Github Link : https://github.com/shadreza/Todo-Site
 
-In the project directory, you can run:
+## Features :
 
-### `yarn start`
+1. Users can add tasks and after a valid input that can be stacked up
+2. Can Complete a Task and that will be shown in the done section
+3. Can remove a task entirely and that will be gone
+4. Can login with google
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Problems faced :
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+1. As this is my first go with TypeScript do many things were bit troublesome in the beginning but now Alhamdulillah fairly comfortable
+2. The useState and useContext ans createContext and document.getElementById these stuff were very problematic for me and they took the biggest time
+3. The hooks were figured out by the help of generic type
+4. The document problem was fixed by using the keyword 'as HTMLInputElement' cause then it got the point and then I could reset the value
+5. The packages were somewhat different and had to add '@types/react' and others in some extents for installing the packages
+6. The firebase importing was a bit issuing but it was fixed by auto import
 
-### `yarn test`
+## Used Technologies
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. React
+2. Firebase
+3. TypeScript
+4. CSS
+and many more
 
-### `yarn build`
+## One Question to you...
+I had set the Header component in the App and then in the Header component I did the routing using react-router-dom and after that in other pages I can easily use the useHistory hook but unable to do it in the Header component...
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## If you got the answer then I would be glad to hear from you!
+📫 How to reach me: ... That's easy...<br/>
+            <br/>Contact - +8801580534330 <br/>
+            <br/>[Linkedin - @shadreza100](https://www.linkedin.com/in/shadreza100/) <br/>
+            [Facebook - @Muhammad Shad Reza](https://www.facebook.com/profile.php?id=100009732251679) <br/>
+            [Github - @shadreza](https://github.com/shadreza) <br/>
+            [Stopstalk - @shadreza](https://www.stopstalk.com/user/profile/shadreza) <br/>
+            <br/>[Portfolio - @shadreza](https://shadreza-portfolio.web.app/) <br/>
+            <br/>[Upwork - @shadreza](https://www.upwork.com/freelancers/~01623a467bb4b97e80) <br/>
