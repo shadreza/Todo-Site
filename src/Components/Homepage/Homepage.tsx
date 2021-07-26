@@ -9,18 +9,43 @@ const Homepage = () => {
 
     interface taskType {
         text: string,
-        time: object
+        time: string,
+        key : number
     }
 
     // states
-    const [curentTask, setCurentTask] = useState <taskType> ()
+    const [currentTask, setCurrentTask] = useState <string> ('')
     const [liveTasks, setLiveTasks] = useState <taskType[]> ([])
     const [doneTasks, setDoneTasks] = useState <taskType[]> ([])
+    const [key, setKey] = useState <number> (0)
 
     // functions
     const getTheTime = () => {
-        const d = new Date();
-        return d;
+        const dateAndTime = new Date();
+        const datePart = dateAndTime.toDateString();
+        const timePart = dateAndTime.toTimeString();
+        const time : string = datePart + " " + timePart;
+        return time;
+    }
+
+    const clearInputDisplay = () => {
+        let inputValue = (document.getElementById('input-tag-text') as HTMLInputElement);
+        inputValue.value = ''
+    }
+
+    const addToRemainingTask = () => {
+        if(currentTask === '') {
+            return
+        }
+        const taskToBeAdded = {
+            text : currentTask,
+            time : getTheTime(),
+            key  : key
+        }
+        setLiveTasks([...liveTasks, taskToBeAdded])
+        clearInputDisplay()
+        setCurrentTask('')
+        setKey(key+1)
     }
 
     return (
@@ -30,7 +55,7 @@ const Homepage = () => {
                     <strong className="strong-text">Tasks remaining {liveTasks.length>0 && `[${liveTasks.length}]`}</strong>
                     {
                         liveTasks.map(task =>
-                            <div className="Task">
+                            <div className="Task"  key={task.key}>
                                 <div className="task">
                                     <div className="text">
                                         <p>{task.text}</p>
@@ -42,7 +67,7 @@ const Homepage = () => {
                                     </p>
                                 </div>
                                 {
-                                    <p><small>{task.time}</small></p>
+                                    <p><small><small>{task.time}</small></small></p>
                                 }
                             </div>
                         )
@@ -72,9 +97,11 @@ const Homepage = () => {
                 </div>
             </div>
             <div className="input-form">
-                <input type="text" placeholder="add to your task stack" className="input-field" />
+                <input type="text" placeholder="add to your task stack" className="input-field" 
+                    onChange={e=>setCurrentTask(e.target.value)} id="input-tag-text"
+                />
                 <p>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 add-button" viewBox="0 0 20 20" fill="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 add-button" viewBox="0 0 20 20" fill="currentColor" onClick={()=>addToRemainingTask()}>
                         <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clipRule="evenodd" />
                     </svg>
                 </p>

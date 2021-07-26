@@ -63,9 +63,14 @@
     border-radius: 10px;
 }
 
+.input-field:focus {
+    border-radius: 10px;
+    outline: none;
+}
+
 .input-form {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-self: center;
 }
 
