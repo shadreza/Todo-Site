@@ -10,10 +10,12 @@
 
 .complete-button {
     width: 20px;
+    margin: auto;
 }
 
 .remove-button {
     width: 20px;
+    margin: auto;
 }
 
 .complete-button:hover {
@@ -37,10 +39,11 @@
     display: flex;
     justify-content: space-between;
     align-self: center;
+    align-items: center;
     background: gainsboro;
     padding: 0 1rem;
     border-radius: 12px;
-    margin: 4px auto;
+    margin: 4px auto 1px auto;
 }
 
 .text {
@@ -49,8 +52,15 @@
     font-weight: 550;
 }
 
+.outerDiv {
+    background: #FAF3F3;
+    padding: 1rem;
+    border-radius: 12px;
+}
+
 .TASKS {
     margin: 2rem auto;
+    align-self: center;
 }
 
 .input-field {
@@ -61,6 +71,7 @@
     padding: 0 auto;
     text-align: center;
     border-radius: 10px;
+    text-overflow: clip;
 }
 
 .input-field:focus {
@@ -72,8 +83,20 @@
     display: flex;
     justify-content: space-around;
     align-self: center;
+    margin: auto;
 }
 
 .strong-text {
     font-size: 18px;
+    margin: 1rem;
+}
+
+.Task {
+    margin: 10px auto;
+}
+
+.lists {
+    max-width: 60%;
+    text-align: center;
+    margin: auto;
 }
